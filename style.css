@@ -8,10 +8,6 @@
 	user-select: none;  
 }
 
-html, body {
-	max-width: 100%;
-}
-
 html {
 	margin: 0;
 	padding: 0;
@@ -146,7 +142,11 @@ footer {
 
 
 @media (max-width: 850px) {
-
+	
+	html, body {
+		max-width: 100%;
+		overflow-x: hidden;
+	}
 	.row {
 		min-width: 400px;
 		width: 100%;
