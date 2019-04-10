@@ -17,8 +17,7 @@ body {
 	margin: 0;
 	background: black;
 	padding: 0;
-/*	padding-left: 10px;
-	padding-right: 10px;*/
+
 }
 
 #modal {
@@ -145,8 +144,9 @@ footer {
 @media (max-width: 850px) {
 	
 	html, body {
-		max-width: 100%;
+		width: 100%;
 	/*	overflow-x: hidden;*/
+		box-sizing: border-box;
 	}
 
 	.row {
