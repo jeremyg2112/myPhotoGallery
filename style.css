@@ -73,10 +73,7 @@ body {
 	z-index: 1;
 }
 
-/*.row:hover > div > img {
-	filter: grayscale(50%);
-}
-*/
+
 .column {
 	flex: 33.3%;
 	padding-right: 10px;
@@ -90,11 +87,14 @@ body {
 	z-index: 2;
 }
 
-/*.thumb:hover {
-	filter: brightness(120%);
-	transition: 0.2s;
-}*/
-
+footer {
+	width: 80%;
+	margin-bottom: 10px;
+	color: white;
+	font-family: times-new-roman;
+	font-size: 12px;
+	text-align: right;
+}
 
 /* Thank you @shshaw (Codepen) for inspiring the effects below */
 
