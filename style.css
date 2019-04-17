@@ -131,6 +131,7 @@ body {
 .row {
 	min-width: 850px;
 	margin: auto;
+	padding-top: 12px;
 	width: 50vw;
 	display: flex;
 	flex-wrap: wrap;
