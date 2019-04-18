@@ -174,6 +174,7 @@ footer {
 
 /* Thank you @shshaw (Codepen) for inspiring the effects below */
 
+@media (min-width: 600px) {
 	.row { 
 	  visibility: hidden; 
 	}
@@ -198,7 +199,7 @@ footer {
  	 	transition-delay: 0ms, 0ms; 
  	 	cursor: pointer;
 	}
-
+}
 /* Thank you @shshaw (Codepen) for inspiring the effects above */
 
 
@@ -213,5 +214,19 @@ footer {
 	.column {
 		flex: 50%;
 		margin: 0;
+	}
+	#info {
+		font-size: 15px;
+	}
+	.column {
+		padding-right: 3vw;
+		padding-left: 3vw;
+	}
+	.thumb {
+		margin-top: 1vh;
+		margin-bottom: 1vh;
+	}
+	.thumb:hover {
+		cursor: pointer;
 	}
 }
