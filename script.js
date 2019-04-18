@@ -1,54 +1,42 @@
-function galleryDefault() {
-	$('.row').css("filter", "blur(0px)");
-	$('.row').css("opacity", "1");
-}
+// FUNCTIONS
 
+// blurs out gallery rows when user opens lightbox
 function galleryObscure() {
-	$('.row').css("filter", "blur(6px)");
-	$('.row').css("opacity", "0.4");
+	$('.row').addClass('row-blur');
 }
 
-function detectSensorClass(e) {
-	if (e.target.className != "sensor") {
-		closeFrame();
-		}
+// restores gallery style to default
+function galleryDefault() {
+	$('.row').removeClass('row-blur');
 }
 
-function addPhotoClickOutsideEvent() {
-	document.addEventListener("click", detectSensorClass);
-}
-
-
-function removeDocumentEventListener() {
-	document.removeEventListener("click", detectSensorClass);
-}
-
-// displays full res version of image user clicks
-// waits until image is loaded to open modal
+// opens lightbox frame with full res version of image 
 function openFrame(e) {
 	galleryObscure();
-	$('#feature-photo')[0].src = e.target.src.slice(0,-4) + "_full.jpg";
-	$('#photo-name').html(e.target.title);
-	$('#photo-desc').html(e.target.alt);
+	$('#feature-photo').attr('src', $(e.target).attr('full'));
+	$('#photo-name').html(e.target.name);
+	$('#photo-desc').text($(e.target).attr('desc'));
+	// waits until image is loaded to open modal
 	$('#feature-photo').on('load', function() {
-	$('#aligner').css("display", "flex");
-	addPhotoClickOutsideEvent();
+		$('.aligner-hidden').addClass('aligner');
+		addClickOutsideEventListener();
 	})
 }
 
-// closes lightbox frame when X icon is clicked
+// closes lightbox frame 
 function closeFrame() {
 	galleryDefault();
-	$('#aligner').hide();
-	$('#info').hide();
-	$('#info-button').show();
-	removeDocumentEventListener();
+	$('.aligner-hidden').removeClass('aligner');
+	hideInfo(); // hides info bar, sets info button to display for when next ligthbox is opened
+	removeClickOutsideEventListener();
 }
+
 
 function showInfo() {
 	 $('#info-button').hide();
 	 $('#info').show();
 }
+
 
 function hideInfo() {
 	$('#info').hide();
@@ -56,9 +44,28 @@ function hideInfo() {
 }
 
 
+function detectSensorClass(e) {
+	if (e.target.className != "sensor") {
+		closeFrame();
+	}
+}
+
+
+function addClickOutsideEventListener() {
+	document.addEventListener("click", detectSensorClass);
+}
+
+
+function removeClickOutsideEventListener() {
+	document.removeEventListener("click", detectSensorClass);
+}
+
+
+// EVENT LISTENERS
+
 $('.thumb').on("click", openFrame);
 
-$('#closeBtn').on("click", closeFrame);
+$('#close-button').on("click", closeFrame);
 
 $('#info-button').on("click", showInfo);
 
@@ -67,64 +74,3 @@ $('#feature-photo').on("click", hideInfo)
 
 
 
-
-
-
-
-
-
-
-
-
-// hides modal when user clicks outside of displayed image
-// $('#feature-photo').on("click", function(e) {
-	// $('.row').css("filter", "blur(0px)");
-	// $('#aligner').hide();
-	// $('#photo-frame').hide();
-// });
-
-
-
-
-
-
-
-	// let photo = document.getElementById("feature-photo");
-	// let infoBtn = document.getElementById("info-button");
-	// let info = document.getElementById("info");
-	// let closeBtn = document.getElementById("closeBtn");
-	// document.addEventListener("click", function(e) {
-	// 	if (e.target != photo && e.target != infoBtn && e.target != info && e.target != closeBtn) {
-	// 		console.log("bingo!");
-	// 		}
-	// 	})
-
-
-		// switch (e.target) {
-		// 	case photo: 
-		// 		console.log("photo");
-		// 		break;
-		// 	case infoBtn:
-		// 		console.log("info button");
-		// 		break;
-		// 	case info: 
-		// 		console.log("info div");
-		// 		break;
-		// 	case closeBtn: 
-		// 		console.log("close button");
-		// 		break;
-		
-// let sensor = document.querySelectorAll('.sensor');
-
-// sensor.forEach(function(elem) {
-// 	elem.addEventListener("click", function() {
-// 		console.log("sensor is working!");
-// 	})
-// })
-
-
-// document.addEventListener("click", function(e) {
-// 	if (e.target == sensor){
-// 		console.log("sensor is working!");
-// 	}
-// })

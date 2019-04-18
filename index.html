@@ -9,10 +9,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-	<div id="aligner">
+	<div id="aligner" class="aligner-hidden">
 		<div id="photo-frame">
 
-			<span id="closeBtn" class="sensor">&times;</span>
+			<span id="close-button" class="sensor">&times;</span>
 			<span><img id="info-button" class="sensor" src="https://img.icons8.com/flat_round/64/000000/info.png"></span>
 			<img id="feature-photo" class="sensor" src="">
 			<div id="info" class="sensor">
@@ -25,28 +25,29 @@
 
 	<div class="row">
 		<div class="column">
-			<img class="thumb" src="garden.jpg" title="Kyotosoft XP" alt="A Japanese garden inside a series of shrines in Kyoto said to have been visited by Bill Gates himself. Sadly, these gardens were not chosen to become the desktop image for Windows XP.">
-			<img class="thumb" src="taipei.jpg" title="Shuhao's Secret Spot" alt="The view of Taipei from a secret, off-trail vantage point near the famous Elephant Mountain hiking trail.">
-			<img class="thumb" src="mtVernon.jpg" title="George Washington's Backyard" alt ="Literally. The OG POTUS’s backyard in Mt. Vernon, Virginia. A distant retreat from the nation’s then-capital of Philadelphia.">	
-			<img class="thumb" src="yangMingShan1.jpg" title="Yang Ming Shan Summit" alt="Surreal golden hour lighting from the top of a mountain overlooking Taipei. In December, it was still warm enough for short sleeves.">
-			<img class="thumb" src="zoey.jpg" title="Zoey" alt="When she’s not being photographed, she doesn’t do much.">
-			<img class="thumb" src="moreller.jpg" title="Moreller" alt="A farmer sells cherries at an unattended stand by the Hardanger Fjord in Norway. Transactions subject to the honor system.">
+			<!-- each photo element is given a custom attribute of full containing the url for the full resolution version, and name/desc attributes for when the user clicks to see more info  -->
+			<img id="test" class="thumb" src="garden.jpg" full="garden_full.jpg" name="Kyotosoft XP" desc="A Japanese garden inside a series of shrines in Kyoto said to have been visited by Bill Gates himself. Sadly, these gardens were not chosen to become the desktop image for Windows XP.">
+			<img class="thumb" src="taipei.jpg" full="taipei_full.jpg" name="Shuhao's Secret Spot" desc="The view of Taipei from a secret, off-trail vantage point near the famous Elephant Mountain hiking trail.">
+			<img class="thumb" src="mtVernon.jpg" full="mtVernon_full.jpg" name="George Washington's Backyard" desc ="Literally. The OG POTUS’s backyard in Mt. Vernon, Virginia. A distant retreat from the nation’s then-capital of Philadelphia.">	
+			<img class="thumb" src="yangMingShan1.jpg" full="yangMingShan1_full.jpg" name="Yang Ming Shan Summit" desc="Surreal golden hour lighting from the top of a mountain overlooking Taipei. In December, it was still warm enough for short sleeves.">
+			<img class="thumb" src="zoey.jpg" full="zoey_full.jpg" name="Zoey" desc="When she’s not being photographed, she doesn’t do much.">
+			<img class="thumb" src="moreller.jpg" full="moreller_full.jpg" name="Moreller" desc="A farmer sells cherries at an unattended stand by the Hardanger Fjord in Norway. Transactions subject to the honor system.">
 		</div>
 		<div class="column">
-			<img class="thumb" src="penny.jpg" title="Penny" alt="A ferocious dachshund waiting for prey in the safari with ears peeled. Like a lion, she is awake for 3 hours a day on average.">
-			<img class="thumb" src="yangMingShan2.jpg" title="Yang Ming Shan" alt="The view from below as we hike up toward the summit.">
-			<img class="thumb" src="church.jpg" name="Straight Outta the Dark Ages" alt="The oldest church in Bergen, Norway.">
-			<img class="thumb" src="chineseRestaurant.jpg" title="Chinese Restaurant" alt="A curious little restaurant across from my old apartment building in Kobe, Japan. One of the only restaurants on the block.">
-			<img class="thumb" src="sunset.jpg" title="Yang Ming Shan Sunset" alt="Do sunset photos really need a description?">
-			<img class="thumb" src="dragonsBack.jpg" title="Dragon's Back" alt="A mountainous hiking trail not far from central Hong Kong.">
+			<img class="thumb" src="penny.jpg" full="penny_full.jpg" name="Penny" desc="A ferocious dachshund waiting for prey in the safari with ears peeled. Like a lion, she is awake for 3 hours a day on average.">
+			<img class="thumb" src="yangMingShan2.jpg" full="yangMingShan2_full.jpg" name="Yang Ming Shan" desc="The view from below as we hike up toward the summit.">
+			<img class="thumb" src="church.jpg" full="church_full.jpg" name="Straight Outta the Dark Ages" desc="The oldest church in Bergen, Norway.">
+			<img class="thumb" src="chineseRestaurant.jpg" full="chineseRestaurant_full.jpg" name="Chinese Restaurant" desc="A curious little restaurant across from my old apartment building in Kobe, Japan. One of the only restaurants on the block.">
+			<img class="thumb" src="sunset.jpg" full="sunset_full.jpg" name="Yang Ming Shan Sunset" desc="Do sunset photos really need a description?">
+			<img class="thumb" src="dragonsBack.jpg" full="dragonsBack_full.jpg" name="Dragon's Back" desc="A mountainous hiking trail not far from central Hong Kong.">
 		</div>
 		<div class="column">
-			<img class="thumb" src="trolltunga.jpg" title="Trolltunga" alt="In the morning hours during the Norwegian summer, fog and mist obscures the path through the mountains.">
-			<img class="thumb" src="sverd.jpg" title="Sverd i fjell" alt="Three swords commemorate the historic Battle of Hafrsfjord in the year 872, when King Harald Fairhair gathered all of Norway under one crown.">
-			<img class="thumb" src="graduation.jpg" title="Graduation" alt="My sister participates in the Class of 2017 cap toss.">
-			<img class="thumb" src="enico.jpg" title="Enico" alt="A musician performs in the busy Dotonbori district of Osaka, Japan.">
-			<img class="thumb" src="stPete.jpg" title="Symphony" alt="The daily raising of the bridges in St. Petersburg is accompanied by a dramatic ceremony including symphonic music and a convoy of ships passing through the newly open brides.">
-			<img class="thumb" src="flowers.jpg" title="Chrysanthemums" alt="Flowers in bloom at historic Gamle Stavanger in Norway.">
+			<img class="thumb" src="trolltunga.jpg" full="trolltunga_full.jpg" name="Trolltunga" desc="In the morning hours during the Norwegian summer, fog and mist obscures the path through the mountains.">
+			<img class="thumb" src="sverd.jpg" full="sverd_full.jpg" name="Sverd i fjell" desc="Three swords commemorate the historic Battle of Hafrsfjord in the year 872, when King Harald Fairhair gathered all of Norway under one crown.">
+			<img class="thumb" src="graduation.jpg" full="graduation_full.jpg" name="Graduation" desc="My sister participates in the Class of 2017 cap toss.">
+			<img class="thumb" src="enico.jpg" full="enico_full.jpg" name="Enico" desc="A musician performs in the busy Dotonbori district of Osaka, Japan.">
+			<img class="thumb" src="stPete.jpg" full="stPete_full.jpg" name="Symphony" desc="The daily raising of the bridges in St. Petersburg is accompanied by a dramatic ceremony including symphonic music and a convoy of ships passing through the newly open brides.">
+			<img class="thumb" src="flowers.jpg" full="flowers_full.jpg" name="Chrysanthemums" desc="Flowers in bloom at historic Gamle Stavanger in Norway.">
 		</div>
 	</div>
 	<footer>All photographs property of Jeremy Galloway</footer>
